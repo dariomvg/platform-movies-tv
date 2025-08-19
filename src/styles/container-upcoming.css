@@ -1,0 +1,39 @@
+.section-upcoming {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-container-upcoming {
+  font-size: 40px;
+  text-decoration: none;
+  color: #fff;
+  padding-top: 30px;
+}
+.container-upcoming {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  background-color: #10101049;
+  backdrop-filter: blur(3px);
+  display: grid;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.image-upcoming {
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+@media (max-width: 425px) {
+  .title-container-upcoming {
+      display: none;
+  }
+  .section-upcoming {
+    display: none;
+  }
+}

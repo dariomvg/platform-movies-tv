@@ -1,0 +1,57 @@
+.section-header-main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.image-main {
+  object-fit: cover;
+}
+
+.container-main {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  backdrop-filter: blur(2px);
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+}
+
+.box-container-main {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.box-title-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.title-container-main {
+  color: #fff;
+  font-size: 40px;
+  text-decoration: none;
+}
+
+.average-container-main {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.date-container-main {
+  color: #fff;
+  font-family: 16px;
+  font-weight: 500;
+}
+
+.overview-container-main {
+  color: #eee;
+  font-size: 18px;
+}

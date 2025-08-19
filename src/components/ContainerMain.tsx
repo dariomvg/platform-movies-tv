@@ -4,7 +4,7 @@ import iconStar from "@/assets/star.svg";
 import iconLink from "@/assets/link.svg";
 import Link from "next/link";
 import { convertDate } from "@/utils/convertDate";
-import "@/styles/main.css";
+import "@/styles/container-main.css";
 
 export const ContainerMain = ({ movie }: { movie: Content }) => {
   const {

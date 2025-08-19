@@ -25,7 +25,7 @@ export default async function Movies({
               <CardContent key={item.id} content={item} />
             ))}
           </ul>
-          <SectionPagination page={page} />
+          <SectionPagination page={page} media="movies" />
         </>
       )}
     </section>

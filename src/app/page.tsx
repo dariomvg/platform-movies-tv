@@ -1,4 +1,3 @@
-import "@/styles/page.css";
 import { getMovies } from "@/services/getMovies";
 import { getMoviesUpcoming } from "@/services/getUpcomings";
 import { getSeries } from "@/services/getSeries";
@@ -7,7 +6,7 @@ import { ContainerUpcoming } from "../components/ContainerUpcoming";
 import { CardContent } from "@/components/CardContent";
 import { CardUpcoming } from "@/components/CardUpcoming";
 import { Content } from "@/types/types";
-import "../styles/home.css";
+import "@/styles/home.css";
 
 export default async function Home() {
   const [movies, series, moviesUpcoming] = await Promise.all([

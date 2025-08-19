@@ -3,7 +3,7 @@ import { Content } from "@/types/types";
 import { full_image } from "@/utils/options";
 import iconLink from "@/assets/link.svg";
 import { convertDate } from "@/utils/convertDate";
-import "@/styles/main.css";
+import "@/styles/container-upcoming.css";
 
 export const ContainerUpcoming = ({ content }: { content: Content }) => {
   const { backdrop_path, title, id, release_date, overview } = content;

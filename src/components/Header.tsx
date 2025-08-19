@@ -9,7 +9,6 @@ import iconMovies from "@/assets/movies.svg";
 import iconSeries from "@/assets/series.svg";
 import iconUpcoming from "@/assets/upcoming.svg";
 import iconGenres from "@/assets/genres.svg";
-import iconMyList from "@/assets/my-list.svg";
 
 export const Header = () => {
   const [active, setActive] = useState<boolean>(false);
@@ -52,7 +51,7 @@ export const Header = () => {
               className="icon-nav-menu"
               loading="lazy"
             />
-            <Link href="/movies/1" className="link-menu">
+            <Link href="/movies?page=1" className="link-menu">
               Movies
             </Link>
           </div>
@@ -67,7 +66,7 @@ export const Header = () => {
               className="icon-nav-menu"
               loading="lazy"
             />
-            <Link href="/series/1" className="link-menu">
+            <Link href="/series?page=1" className="link-menu">
               Series
             </Link>
           </div>
@@ -99,24 +98,10 @@ export const Header = () => {
               Genres
             </Link>
           </div>
-
-          <div className="container-link">
-            <img
-              src={iconMyList.src}
-              alt="icon list"
-              width={25}
-              height={25}
-              className="icon-nav-menu"
-              loading="lazy"
-            />
-            <Link href="/my-list" className="link-menu">
-              My list
-            </Link>
-          </div>
         </nav>
       </div>
       <footer className="footer-menu">
-        <p className="title-footer">© AppMovies 2025</p>
+        <p className="title-footer">© MoviesSeriesTv 2025</p>
       </footer>
     </header>
   );

@@ -24,7 +24,7 @@ export default async function Series({
                 <CardContent key={item.id} content={item} />
               ))}
             </ul>
-            <SectionPagination page={page} />
+            <SectionPagination page={page} media="series" />
           </>
         )
       }

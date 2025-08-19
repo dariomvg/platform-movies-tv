@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { full_image, poster_image, url_trailer } from "@/utils/options";
+import { full_image, poster_image } from "@/utils/options";
 import { convertDate } from "@/utils/convertDate";
 import iconStar from "@/assets/star.svg";
-import ReactPlayer from "react-player";
 import "./content.css";
 import { getContentAndTrailer } from "@/services/getContentAndTrailer";
 import { filterTrailer } from "@/services/filterTrailer";
-import { Loader } from "@/components/Loader";
+import TrailerContent from "@/components/TrailerContent";
 
 export default async function Content({
   searchParams,
@@ -49,14 +48,7 @@ export default async function Content({
                 />
                 {trailer[0]?.key && (
                   <div className="container-video">
-                    <ReactPlayer
-                      src={`${url_trailer}${trailer[0]?.key}`}
-                      controls
-                      width="100%"
-                      height="100%"
-                      config={{ youtube: { color: "red" } }}
-                      fallback={<Loader />}
-                    />
+                    <TrailerContent videoId={trailer[0].key} />
                   </div>
                 )}
               </div>
@@ -72,7 +64,7 @@ export default async function Content({
                 <p className="average-container-content">
                   {content.vote_average &&
                     Math.round(content.vote_average * 10) / 10}
-                  <img src={iconStar} alt="icon star" width={20} height={20} />
+                  <img src={iconStar.src} alt="icon star" width={20} height={20} />
                 </p>
               </div>
               {content.number_of_episodes && content.number_of_seasons && (
