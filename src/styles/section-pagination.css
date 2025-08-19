@@ -1,0 +1,33 @@
+.container-button-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: auto;
+}
+
+.button-both-content {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    color: #eee;
+    cursor: pointer;
+    font-size: 16px;
+    transition: .5s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 12px;
+}
+
+.button-both-content:hover {
+    transition: .5s;
+    color: #fff;
+}
+
+.title-page {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}
