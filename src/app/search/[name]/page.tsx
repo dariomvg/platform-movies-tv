@@ -1,10 +1,10 @@
 import { searchMovie } from "@/services/searchMovie";
 import "./search.css";
 import { CardContent } from "@/components/CardContent";
-import { Content } from "@/types/types";
+import { Content, PagePropsSearch } from "@/types/types";
 
-export default async function Search({ params }: { params: { name: string } }) {
-  if (!params.name) return;
+export default async function Search({ params }: PagePropsSearch) {
+
   const content = await searchMovie(params.name);
 
   return (

@@ -120,3 +120,14 @@ export interface Credits {
   };
 }
 
+export interface PagePropsParams {
+  params: {
+    id: string;
+  };
+}
+
+export interface PagePropsSearch {
+  params: {
+    name: string;
+  };
+}

@@ -1,11 +1,12 @@
 import { CardContent } from "@/components/CardContent";
 import "./actor.css";
 import Link from "next/link";
-import { Content } from "@/types/types";
+import { Content, PagePropsParams } from "@/types/types";
 import { getMoviesActor } from "@/services/getMoviesActor";
 
-export default async function Actor({ params }: { params: { id: string } }) {
-  if (!params.id) return;
+
+export default async function Actor({ params }: PagePropsParams) {
+ 
   const content = await getMoviesActor(parseInt(params.id));
 
   return (
