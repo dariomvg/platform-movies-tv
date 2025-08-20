@@ -2,11 +2,15 @@ import { CardContent } from "@/components/CardContent";
 import Link from "next/link";
 import "./genre.css";
 import { getContentGenres } from "@/services/getContentGenres";
-import { Content, PagePropsParams } from "@/types/types";
+import { Content } from "@/types/types";
 
-export default async function Genre({ params }: PagePropsParams) {
+ interface PageGenrePropsParams {
+  params: Promise<{id: string}>
+}
+export default async function Genre({ params }: PageGenrePropsParams) {
  
-  const content = await getContentGenres(parseInt(params.id));
+  const {id} = await params
+  const content = await getContentGenres(parseInt(id));
 
   return (
     <section className="page-genre">

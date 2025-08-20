@@ -1,11 +1,15 @@
 import { searchMovie } from "@/services/searchMovie";
 import "./search.css";
 import { CardContent } from "@/components/CardContent";
-import { Content, PagePropsSearch } from "@/types/types";
+import { Content } from "@/types/types";
 
-export default async function Search({ params }: PagePropsSearch) {
+interface PageSearchPropsParams {
+  params: Promise<{ name: string }>;
+}
 
-  const content = await searchMovie(params.name);
+export default async function Search({ params }: PageSearchPropsParams) {
+  const { name } = await params;
+  const content = await searchMovie(name);
 
   return (
     <section className="page-search">
