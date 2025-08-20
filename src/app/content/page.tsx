@@ -6,18 +6,11 @@ import "./content.css";
 import { getContentAndTrailer } from "@/services/getContentAndTrailer";
 import { filterTrailer } from "@/services/filterTrailer";
 import TrailerContent from "@/components/TrailerContent";
+import { PropsSearchParamsContent } from "@/types/types";
 
-export default async function Content({
-  searchParams,
-}: {
-  searchParams: { id: string; media: string };
-}) {
-  if (!searchParams.id || !searchParams.media) return;
-  const content = await getContentAndTrailer(
-    parseInt(searchParams.id),
-    searchParams.media
-  );
-
+export default async function Content({searchParams}: PropsSearchParamsContent) {
+  const {id, media} = await searchParams; 
+  const content = await getContentAndTrailer(parseInt(id), media);
   const trailer = filterTrailer(content);
 
   return (

@@ -4,19 +4,21 @@ import { getGenres } from "@/services/getGenres";
 
 export default async function Genres() {
   const allGenres = await getGenres();
-  if (!allGenres) return;
+  if (!allGenres) return [];
   const genres = Array.from(new Map(allGenres.map((e) => [e.id, e])).values());
 
   return (
     <section className="page-genres">
-      {genres.map((genre) => (
-        <Link
-          href={`/genres/genre/${genre.id}?genre=${genre.name}`}
-          key={genre.id}
-          className="genre">
-          {genre.name}
-        </Link>
-      ))}
+      {genres.length > 0
+        ? genres.map((genre) => (
+            <Link
+              href={`/genres/genre/${genre.id}?genre=${genre.name}`}
+              key={genre.id}
+              className="genre">
+              {genre.name}
+            </Link>
+          ))
+        : null}
     </section>
   );
 }

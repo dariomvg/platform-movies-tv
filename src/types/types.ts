@@ -120,3 +120,18 @@ export interface Credits {
   };
 }
 
+export interface PropsParamsId {
+  params: Promise<{id: string}>
+}
+
+export interface PropsParamsName{
+  params: Promise<{name: string}>
+}
+
+export interface PropsSearchParamsPage {
+  searchParams: Promise<{page: string}>
+}
+
+export interface PropsSearchParamsContent {
+  searchParams: Promise<{id: string, media: string}>
+}

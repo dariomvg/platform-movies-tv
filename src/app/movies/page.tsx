@@ -1,19 +1,12 @@
 import { CardContent } from "@/components/CardContent";
 import "@/styles/page-movies-series.css";
-import {Content} from "@/types/types"
-import {getMovies} from "@/services/getMovies"
+import { Content, PropsSearchParamsPage } from "@/types/types";
+import { getMovies } from "@/services/getMovies";
 import { SectionPagination } from "@/components/SectionPagination";
 
-export default async function Movies({
-  searchParams,
-}: {
-  searchParams: { page?: string };
-}) {
-
-  if(!searchParams.page) return; 
-
-  const page = parseInt(searchParams.page) || 1;
-  const content = await getMovies(page);
+export default async function Movies({ searchParams }: PropsSearchParamsPage) {
+  const { page } = await searchParams;
+  const content = await getMovies(parseInt(page));
 
   return (
     <section className="page-both-content">
@@ -25,7 +18,7 @@ export default async function Movies({
               <CardContent key={item.id} content={item} />
             ))}
           </ul>
-          <SectionPagination page={page} media="movies" />
+          <SectionPagination page={parseInt(page)} media="movies" />
         </>
       )}
     </section>
